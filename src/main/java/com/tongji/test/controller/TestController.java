@@ -1,17 +1,9 @@
 package com.tongji.test.controller;
 
-import com.tongji.test.service.WhiteBoxService;
 import com.tongji.test.util.ConstantSalePath;
-import com.tongji.test.util.SpringContextUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-<<<<<<< HEAD
-
-import org.springframework.stereotype.Controller;
-
 import java.lang.reflect.Method;
 import java.util.List;
-import java.io.IOException;
 
 
 @CrossOrigin(origins = "*", allowCredentials = "true")
