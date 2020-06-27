@@ -23,7 +23,7 @@ public class TestController {
 
     @PostMapping("/test")
     public List<Object> example(){
-        List<Object> result = whiteBoxService.Run(ConstantSalePath.StatementTest);
+        List<Object> result = whiteBoxService.Run(ConstantSalePath.DCTest);
         return result;
     } 
 
