@@ -1,8 +1,5 @@
 package com.tongji.test.function;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 
 public class Calender {
     public int year;
@@ -112,29 +109,29 @@ public class Calender {
         return result;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("CalenderBoundary.csv"));
-
-            reader.readLine();
-
-            String line = null;
-            while((line = reader.readLine())!=null) {
-                String item[] = line.split(",");
-                String year = item[1];
-                String month = item[2];
-                String day = item[3];
-                Calender test = new Calender();
-                test.year = Integer.parseInt(year);
-                test.month = Integer.parseInt(month);
-                test.day = Integer.parseInt(day);
-                String result = test.TheNextDay();
-                System.out.println("预期输出日期：" + item[4] + "\t\t实际输出日期：" + result);
-            }
-
-        }
-        catch (Exception e) {
-
-        }
-    }
+//    public static void main(String[] args) throws FileNotFoundException {
+//        try {
+//            BufferedReader reader = new BufferedReader(new FileReader("CalenderBoundary.csv"));
+//
+//            reader.readLine();
+//
+//            String line = null;
+//            while((line = reader.readLine())!=null) {
+//                String item[] = line.split(",");
+//                String year = item[1];
+//                String month = item[2];
+//                String day = item[3];
+//                Calender test = new Calender();
+//                test.year = Integer.parseInt(year);
+//                test.month = Integer.parseInt(month);
+//                test.day = Integer.parseInt(day);
+//                String result = test.TheNextDay();
+//                System.out.println("预期输出日期：" + item[4] + "\t\t实际输出日期：" + result);
+//            }
+//
+//        }
+//        catch (Exception e) {
+//
+//        }
+//    }
 }
