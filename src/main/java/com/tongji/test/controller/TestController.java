@@ -4,15 +4,10 @@ import com.tongji.test.service.WhiteBoxService;
 import com.tongji.test.util.ConstantSalePath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
-
 import com.tongji.test.service.CalenderBoundary;
-
 import java.util.List;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 @CrossOrigin(origins = "*", allowCredentials = "true")
 @RestController
