@@ -1,7 +1,9 @@
 package com.tongji.test.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import org.springframework.stereotype.Controller;
+
 
 
 /**
@@ -22,6 +24,8 @@ public class TestController {
     public boolean example(){
         System.out.println("hello!");
         return true;
-    }
+    } 
 
 }
+
+
