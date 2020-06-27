@@ -4,17 +4,22 @@ import com.tongji.test.service.WhiteBoxService;
 import com.tongji.test.util.ConstantSalePath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import org.springframework.stereotype.Controller;
 
-import java.util.List;
+import com.tongji.test.service.CalenderBoundary;
 
+import java.util.List;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @CrossOrigin(origins = "*", allowCredentials = "true")
 @RestController
 public class TestController {
     @Autowired
     WhiteBoxService whiteBoxService;
+    CalenderBoundary cal;
 
     @RequestMapping(value = "/hello", method = RequestMethod.POST)
     public String hello(@RequestParam(value = "name") String name){
@@ -26,6 +31,19 @@ public class TestController {
         List<Object> result = whiteBoxService.Run(ConstantSalePath.StatementTest);
         return result;
     } 
+    
+    @RequestMapping("/cal_boundary")
+    public List<Object> cal_boundary() throws IOException {
+    	List<Object> last = cal.calender_boundary(ConstantSalePath.CalBoundary);
+		return last;
+    }
+    
+    @RequestMapping("/cal_equivalence")
+    public List<Object> cal_equivalence() throws IOException {
+    	List<Object> last = cal.calender_boundary(ConstantSalePath.CalEquivalence);
+		return last;
+    }
+
 
 }
 
