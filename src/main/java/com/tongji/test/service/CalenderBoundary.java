@@ -19,7 +19,7 @@ public class CalenderBoundary {
     	   BufferedReader reader = new BufferedReader(new FileReader(path));
            String line = reader.readLine();
            String predict_result = "wrong";
-           boolean pass = false;
+           
 
            if(line != null){
                line = reader.readLine();
@@ -32,9 +32,10 @@ public class CalenderBoundary {
                int month = Integer.parseInt(item[2]);
                int day = Integer.parseInt(item[3]);
                String fact_result = item[4];
+               boolean pass = false;
                String result = Calender.TheNextDay(year,month,day);
                predict_result = result;
-	       	   if(predict_result.strip()==fact_result.strip()) {
+	       	   if(predict_result.strip().equals(fact_result.strip())) {
 	    			pass = true;
 	    		}
                Map<String, Object> map = new HashMap<>();
