@@ -11,9 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service("WhiteBox")
-public class WhiteBoxService {
-    public static List<Object> Run(String path) {
+//@Service("WhiteBoxService")
+public class WhiteBoxService implements TestService{
+    @Override
+    public List<Object> Run(String path) {
         String encoding = "utf-8";
         int count = 0;
         List<Object> result = new ArrayList<Object>();
