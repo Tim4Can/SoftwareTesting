@@ -1,5 +1,6 @@
 package com.tongji.test.controller;
 
+import com.tongji.test.service.CalenderBoundary;
 import com.tongji.test.util.ConstantSalePath;
 import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Method;
@@ -10,7 +11,7 @@ import java.util.List;
 @RestController
 public class TestController {
 
-    //CalenderBoundary cal;
+    CalenderBoundary cal;
 
     @PostMapping("/test")
     public List<Object> Test() {
@@ -25,7 +26,7 @@ public class TestController {
         }
         return result;
     } 
-    /*
+  
     @RequestMapping("/cal_boundary")
     public List<Object> cal_boundary() {
     	List<Object> last = cal.calender_boundary(ConstantSalePath.CalBoundary);
@@ -37,7 +38,7 @@ public class TestController {
     	List<Object> last = cal.calender_boundary(ConstantSalePath.CalEquivalence);
 		return last;
     }
-    */
+  
 
 }
 
