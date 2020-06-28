@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -78,11 +80,28 @@ public class Triangle {
     }
 
     public static void main(String[] args) {
-        Triangle test = new Triangle();
-        test.side1 = "4";
-        test.side2 = "4";
-        test.side3 = "4";
-        String result = test.CheckTriangle();
-        System.out.println(result);
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("./testcsv/TriangleBoundary.csv"));
+
+            reader.readLine();
+
+            String line = null;
+            while((line = reader.readLine())!=null) {
+                String item[] = line.split(",");
+                String side1 = item[1];
+                String side2 = item[2];
+                String side3 = item[3];
+                Triangle test = new Triangle();
+                test.side1 = side1;
+                test.side2 = side2;
+                test.side3 = side3;
+                String result = test.CheckTriangle();
+                System.out.println("预期输出：" + item[4] + "\t\t实际输出：" + result);
+            }
+
+        }
+        catch (Exception e) {
+
+        }
     }
 }

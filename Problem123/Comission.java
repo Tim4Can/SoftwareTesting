@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Collection;
 import java.util.FormatFlagsConversionMismatchException;
 
@@ -36,11 +38,28 @@ public class Comission {
     }
 
     public static void main(String[] args) {
-        Comission test = new Comission();
-        test.host = 1;
-        test.monitor = 40;
-        test.peripheral = 46;
-        double result = test.CalculateCommision();
-        System.out.println(result);
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("./testcsv/ComissionBoundary.csv"));
+
+            reader.readLine();
+
+            String line = null;
+            while((line = reader.readLine())!=null) {
+                String item[] = line.split(",");
+                String host = item[1];
+                String monitor = item[2];
+                String peripheral = item[3];
+                Comission test = new Comission();
+                test.host = Integer.parseInt(host);
+                test.monitor = Integer.parseInt(monitor);
+                test.peripheral = Integer.parseInt(peripheral);
+                double result = test.CalculateCommision();
+                System.out.println("预期输出：" + item[6] + "\t\t实际输出：" + result);
+            }
+
+        }
+        catch (Exception e) {
+
+        }
     }
 }
