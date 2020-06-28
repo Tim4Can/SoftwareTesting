@@ -19,5 +19,11 @@ public class ConstantPath {
     public final static String PBEC2="src/main/java/com/tongji/test/usecase/PhoneBillEC2.csv";
     public final static String PBEC3="src/main/java/com/tongji/test/usecase/PhoneBillEC3.csv";
     public final static String PBDT="src/main/java/com/tongji/test/usecase/PhoneBillDT.csv";
+    
+    //Triangle Path
+    public final static String TriBoundary = "src/main/java/com/tongji/test/usecase/TriangleBoundary.csv";
+    
+    //Comission Path
+    public final static String ComBoundary = "src/main/java/com/tongji/test/usecase/ComissionBoundary.csv";
 
 }
