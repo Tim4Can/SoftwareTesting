@@ -11,34 +11,28 @@ import com.tongji.test.function.Calender;
 
 public class CalenderBoundary {
 
-	 public static List<Object> calender_boundary(String path) throws IOException {
-       
-		BufferedReader reader = new BufferedReader(new FileReader(path));
-
+	 public static List<Object> calender_boundary(String path){
+		 List<Object> last = new ArrayList<>();
+		 int count = 0;
+       try {
+    	   
+    	   BufferedReader reader = new BufferedReader(new FileReader(path));
            String line = reader.readLine();
-           String year = "wrong";
-           String month = "wrong";
-           String day = "wrong";
            String predict_result = "wrong";
-           String fact_result = "wrong";
-           String case_id = "wrong";
            boolean pass = false;
            Map<String, Object> map = new HashMap<>();
-    	   List<Object> last = new ArrayList<>();
-           
-           while((line = reader.readLine())!=null) {
-        	  
+           if(line != null){
+               line = reader.readLine();
+           }           
+           while(line !=null) {
+        	   count ++;
                String item[] = line.split(",");
-               case_id = item[0];
-               year = item[1];
-               month = item[2];
-               day = item[3];
-               fact_result = item[4];
-               Calender test = new Calender();
-               test.year = Integer.parseInt(year);
-               test.month = Integer.parseInt(month);
-               test.day = Integer.parseInt(day);
-               String result = test.TheNextDay();
+        	   String case_id = item[0];
+               int year = Integer.parseInt(item[1]);
+               int month = Integer.parseInt(item[2]);
+               int day = Integer.parseInt(item[3]);
+               String fact_result = item[4];
+               String result = Calender.TheNextDay(year,month,day);
                predict_result = result;
                
 	       	   if(predict_result.strip()==fact_result.strip()) {
@@ -53,8 +47,14 @@ public class CalenderBoundary {
 	           map.put("result",fact_result);
 	           
 	           last.add(map);
-              
+	           line = reader.readLine();
+	           System.out.println("count:"+count);
+           
            }
+           reader.close();
+       }catch(Exception e){
+           e.printStackTrace();
+       }
           
 		return last;
     

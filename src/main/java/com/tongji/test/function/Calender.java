@@ -6,9 +6,9 @@ public class Calender {
     public int month;
     public int day;
 
-    public String result;
+    public static String result;
 
-    public boolean InputIllegal()
+    public static boolean InputIllegal(int year,int month,int day)
     {
         // 日期范围
         if(day > 31 || day < 1) {
@@ -53,12 +53,12 @@ public class Calender {
         return false;
     }
 
-    public String TheNextDay()
+    public static String TheNextDay(int year,int month,int day)
     {
         int result_year = year;
         int result_month = month;
         int result_day = day + 1;
-        boolean illegal = InputIllegal();
+        boolean illegal = InputIllegal(year,month,day);
         // 判断输入是否合法
         if (illegal) {
             result = "输入不合法";

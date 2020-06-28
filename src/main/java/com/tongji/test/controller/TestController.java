@@ -28,13 +28,13 @@ public class TestController {
     } 
     
     @RequestMapping("/cal_boundary")
-    public List<Object> cal_boundary() throws IOException {
+    public List<Object> cal_boundary() {
     	List<Object> last = cal.calender_boundary(ConstantSalePath.CalBoundary);
 		return last;
     }
     
     @RequestMapping("/cal_equivalence")
-    public List<Object> cal_equivalence() throws IOException {
+    public List<Object> cal_equivalence()  {
     	List<Object> last = cal.calender_boundary(ConstantSalePath.CalEquivalence);
 		return last;
     }
