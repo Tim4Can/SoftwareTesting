@@ -20,7 +20,7 @@ public class CalenderBoundary {
            String line = reader.readLine();
            String predict_result = "wrong";
            boolean pass = false;
-           Map<String, Object> map = new HashMap<>();
+
            if(line != null){
                line = reader.readLine();
            }           
@@ -34,10 +34,10 @@ public class CalenderBoundary {
                String fact_result = item[4];
                String result = Calender.TheNextDay(year,month,day);
                predict_result = result;
-               
 	       	   if(predict_result.strip()==fact_result.strip()) {
 	    			pass = true;
 	    		}
+               Map<String, Object> map = new HashMap<>();
 	    	   map.put("case-id",case_id);
 	           map.put("year",year);
 	           map.put("month",month);
