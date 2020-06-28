@@ -8,7 +8,7 @@ public class ConstantPath {
     public final static String DCTest = "src/main/java/com/tongji/test/usecase/SaleDC.csv";
     public final static String CCTest = "src/main/java/com/tongji/test/usecase/SaleCC.csv";
 
-    // Calender Path
+    // Calendar Path
     public final static String CalBoundary = "src/main/java/com/tongji/test/usecase/CalenderBoundary.csv";
     public final static String CalEquivalence = "src/main/java/com/tongji/test/usecase/CalenderEquivalence.csv";
 

@@ -10,6 +10,7 @@ public class MappingRelation {
         // mapping services
         classMap.put("8", "com.tongji.test.service.WhiteBoxService");
         classMap.put("7","com.tongji.test.service.PhoneBillService");
+        classMap.put("2","com.tongji.test.service.CalenderBoundary");
 
         // mapping suites
         suiteMap.put("8_sts", ConstantPath.StatementTest);
@@ -24,5 +25,8 @@ public class MappingRelation {
         suiteMap.put("7_ec2",ConstantPath.PBEC2);
         suiteMap.put("7_ec3",ConstantPath.PBEC3);
         suiteMap.put("7_dt",ConstantPath.PBDT);
+        
+        suiteMap.put("2_bd",ConstantPath.CalBoundary);
+        suiteMap.put("2_eq",ConstantPath.CalEquivalence);
     }
 }

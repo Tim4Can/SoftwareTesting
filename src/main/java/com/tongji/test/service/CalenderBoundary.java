@@ -9,9 +9,9 @@ import java.util.Map;
 
 import com.tongji.test.function.Calender;
 
-public class CalenderBoundary {
+public class CalenderBoundary implements TestService {
 
-	 public static List<Object> calender_boundary(String path){
+	 public  List<Object> Run(String path){
 		 List<Object> last = new ArrayList<>();
 		 int count = 0;
        try {
@@ -49,7 +49,7 @@ public class CalenderBoundary {
 	           
 	           last.add(map);
 	           line = reader.readLine();
-	           System.out.println("count:"+count);
+//	           System.out.println("count:"+count);
            
            }
            reader.close();
