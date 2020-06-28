@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @program: st
- * @description: software testing exercise 7
+ * @program: test
+ * @description: fix some bugs
  * @author: Yu Liu
- * @create: 2020/06/23
+ * @create: 2020/06/28
  **/
-public class PhoneBill {
+public class PhoneBillFix {
     private int arrearNum;
     private int time;
     private static final double basePrice = 25.00;
@@ -21,7 +21,7 @@ public class PhoneBill {
     private Map discount;
     private double discounts[]={0.00,0.01,0.015,0.02,0.025,0.03};
     private int arrears[]={0,1,2,3,3,6};
-    public PhoneBill(){
+    public PhoneBillFix(){
         this.discount= new HashMap();
         this.discount.put(0, discounts[0]);
         this.discount.put(1, discounts[1]);
@@ -38,11 +38,11 @@ public class PhoneBill {
         return this.compute();
     }
     private int assort(){
-        if(this.arrearNum<0){
+        if(this.arrearNum<0||this.arrearNum>12){
             System.out.println("N值输入错误");
             return -1;
         }
-        if(this.time<0){
+        if(this.time<0||this.time>44640){
             System.out.println("T值输入错误");
             return -2;
         }
