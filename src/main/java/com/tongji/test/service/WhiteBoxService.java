@@ -49,6 +49,9 @@ public class WhiteBoxService implements TestService{
 
                     // 测试用例结果
                     Map<String, Object> map = new HashMap<String, Object>();
+                    map.put("volume", volume);
+                    map.put("day", day);
+                    map.put("rate", rate);
                     map.put("case-id", test_case[0]);
                     map.put("predict", predict);
                     map.put("result", actual);
