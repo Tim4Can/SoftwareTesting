@@ -8,16 +8,15 @@ public class SaleSystem {
         if(day < 0 || day > 365){
             return -1;
         }
-        // if(rate < 0 || rate > 1){
-        if((rate-1 > 0.001) || rate < 0){
+        if(rate < 0 || rate > 1){
             return -1;
         }
 
         // Version 2.0 : 双精度运算问题
-        // if(sale > 200 && day <= 10){
+        //if(sale > 200 && day <= 10){
         if((sale-200 > 0.001) && day <= 10){
             // Version 2.0 : 双精度运算问题
-            // if(rate >= 0.6){
+            //if(rate >= 0.6){
             if((rate-(float)0.6) >= 0.001){
                 return sale / 7;
             }else{
@@ -25,7 +24,7 @@ public class SaleSystem {
             }
         }else{
             // Version 1.0 : 双精度运算问题
-            // if(rate <= 0.85){
+            //if(rate <= 0.85){
             if((rate - (float)0.85) <= 0.001){
                 return sale / 6;
             }else{
