@@ -537,22 +537,76 @@ export default {
   methods: {
     search() {
       if (this.value == "选项1") {
-        this.tableData = this.bdData;
+        // this.tableData = this.bdData;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=boundary")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value == "选项2") {
-        this.tableData = this.eqData0;
+        // this.tableData = this.eqData0;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=ec0")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value == "选项3") {
-        this.tableData = this.eqData1;
+        // this.tableData = this.eqData1;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=ec1")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value == "选项4") {
-        this.tableData = this.eqData2;
+        // this.tableData = this.eqData2;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=ec2")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value == "选项5") {
-        this.tableData = this.eqData3;
+        // this.tableData = this.eqData3;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=ec3")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value == "选项6") {
-        this.tableData = this.jcData;
+        // this.tableData = this.jcData;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=dt")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
     }
   },

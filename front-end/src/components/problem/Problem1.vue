@@ -836,19 +836,37 @@ export default {
     search() {
       console.log(this.value);
       if (this.value == "选项1") {
-        this.tableData = this.CalenderBoundary;
+        // this.tableData = this.CalenderBoundary;
+        this.$axios
+          .post("http://localhost:8021/test?service=2&type=bd")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value == "选项2") {
-        this.tableData = this.CalenderEquivalence;
+        // this.tableData = this.CalenderEquivalence;
+        this.$axios
+          .post("http://localhost:8021/test?service=2&type=eq")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       // let param = {
-      //   service: 2,
-      //   type: "bd"
+      //   service: '3',
+      //   type: 'bd'
       // };
       // this.$axios
-      //   .post("http://localhost:8021/test", param)
+      //   .post("http://localhost:8021/test?service=3&type=bd")
       //   .then(response => {
-      //     console.log(response);
+      //     console.log(response.data);
       //   })
       //   .catch(() => {
       //     console.log("error");
@@ -857,10 +875,28 @@ export default {
     search2() {
       console.log(this.value2);
       if (this.value2 == "选项1") {
-        this.tableData2 = this.TriangleBoundary;
+        // this.tableData2 = this.TriangleBoundary;
+        this.$axios
+          .post("http://localhost:8021/test?service=1&type=bd")
+          .then(response => {
+            console.log(response.data);
+            this.tableData2 = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
       if (this.value2 == "选项2") {
-        this.tableData2 = this.TriangleEquivalence;
+        // this.tableData2 = this.TriangleEquivalence;
+        this.$axios
+          .post("http://localhost:8021/test?service=1&type=eq")
+          .then(response => {
+            console.log(response.data);
+            this.tableData2 = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
       }
     },
     handleClick(tab, event) {

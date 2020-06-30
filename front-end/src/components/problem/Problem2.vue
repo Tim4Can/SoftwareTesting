@@ -357,7 +357,20 @@ export default {
   },
   methods: {
     search() {
-      this.tableData = this.Comission;
+      // this.tableData = this.Comission;
+      let param = {
+        service: '3',
+        type: 'bd'
+      };
+      this.$axios
+        .post("http://localhost:8021/test?service=3&type=bd")
+        .then(response => {
+          console.log(response.data);
+          this.tableData = response.data;
+        })
+        .catch(() => {
+          console.log("error");
+        });
     }
   },
   mounted() {}
