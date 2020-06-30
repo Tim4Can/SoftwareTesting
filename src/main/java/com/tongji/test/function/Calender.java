@@ -64,6 +64,15 @@ public class Calender {
                     } else {
                         flag = true;
                     }
+                } else {
+                    if (day == 28) {
+                        day = 1;
+                        month = 3;
+                    } else if (day < 28) {
+                        day = day + 1;
+                    } else {
+                        flag = true;
+                    }
                 }
                 break;
             default:
@@ -76,6 +85,7 @@ public class Calender {
             return (year + "." + month + "." + day);
         }
     }
+    
 
 //    public static void main(String[] args) throws FileNotFoundException {
 //        try {
