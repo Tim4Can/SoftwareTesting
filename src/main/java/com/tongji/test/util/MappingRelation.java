@@ -32,7 +32,7 @@ public class MappingRelation {
         suiteMap.put("2_eq",ConstantPath.CalEquivalence);
         
         suiteMap.put("1_bd",ConstantPath.TriBoundary);
-       // suiteMap.put("1_eq",ConstantPath.TriEquivalence);
+        suiteMap.put("1_eq",ConstantPath.TriEquivalence);
         
         suiteMap.put("3_bd",ConstantPath.ComBoundary);
     }
