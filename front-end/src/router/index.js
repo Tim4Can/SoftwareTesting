@@ -11,6 +11,7 @@ import Problem6 from '../components/problem/Problem6.vue'
 import Problem7 from '../components/problem/Problem7.vue'
 import Problem8 from '../components/problem/Problem8.vue'
 import Problem9 from '../components/problem/Problem9.vue'
+import baogao from '../components/iS3/baogao.vue'
 
 
 Vue.use(VueRouter)
@@ -36,7 +37,8 @@ const routes = [
       { path: '/problem6', component: Problem6 },
       { path: '/problem7', component: Problem7 },
       { path: '/problem8', component: Problem8 },
-      { path: '/problem9', component: Problem9 }
+      { path: '/problem9', component: Problem9 },
+      { path: '/baogao', component: baogao}
     ]
   }
 ]
