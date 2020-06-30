@@ -8,105 +8,73 @@ public class Calender {
 
     public static String result;
 
-    public static boolean InputIllegal(int year,int month,int day)
-    {
-        // 日期范围
-        if(day > 31 || day < 1) {
-            return true;
-        }
-        // 小月最大值
-        else if (day == 31) {
-            switch (month) {
-                case 2:
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    return true;
-            }
-        }
-        else if (day == 30) {
-            switch (month) {
-                case 2:
-                    return true;
-            }
-        }
-        // 闰年判断
-        else if (month == 2 && day == 29)
-        {
-            int four = year % 4;
-            int hundred = year % 100;
-            int both = year % 400;
-            if (four == 0 && hundred != 0) {
-                return false;
-            }
-            else if (both == 0) {
-                return false;
-            }
-            return true;
-        }
-        // 月份范围
-        else if (month > 12 || month < 1) {
-            return true;
+    public static String TheNextDay(int year,int month,int day) {
+        boolean flag = false;
+        if (year < 1900 || year > 2050) {
+            return ("年的值不在指定范围之内");
+        } else if (month > 12 || month < 1) {
+            return ("月的值不在指定范围之内");
+        } else if (day > 31 || day < 1) {
+            return ("日的值不在指定范围之内");
         }
 
-        return false;
-    }
-
-    public static String TheNextDay(int year,int month,int day)
-    {
-        int result_year = year;
-        int result_month = month;
-        int result_day = day + 1;
-        boolean illegal = InputIllegal(year,month,day);
-        // 判断输入是否合法
-        if (illegal) {
-            result = "输入不合法";
-            return result;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+                if (day == 31) {
+                    day = 1;
+                    month = month + 1;
+                } else {
+                    day = day + 1;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if (day == 30) {
+                    day = 1;
+                    month = month + 1;
+                } else if (day == 31) {
+                    flag = true;
+                } else {
+                    day = day + 1;
+                }
+                break;
+            case 12:
+                if (day == 31) {
+                    day = 1;
+                    month = 1;
+                    year = year + 1;
+                } else {
+                    day = day + 1;
+                }
+                break;
+            case 2:
+                if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
+                    if (day == 29) {
+                        day = 1;
+                        month = 3;
+                    } else if (day < 29) {
+                        day = day + 1;
+                    } else {
+                        flag = true;
+                    }
+                }
+                break;
+            default:
         }
-        // 根据日来判断日和月
-        if (day == 31 && month == 12) {
-            result_day = 1;
-            result_month = 1;
-            result_year =  year + 1;
+        if (year > 2050) {
+            return ("年的值不在指定范围之内");
+        } else if (flag) {
+            return ("日的值不在指定范围之内");
+        }else {
+            return (year + "." + month + "." + day);
         }
-        else if (day == 30) {
-            switch (month) {
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    result_month = month + 1;
-                    result_day = 1;
-            }
-        }
-        else if (month == 2) {
-            boolean leapYear = false;
-            int four = year % 4;
-            int hundred = year % 100;
-            int both = year % 400;
-            if (four == 0 && hundred != 0) {
-                leapYear = true;
-            }
-            else if (both == 0) {
-                leapYear = true;
-            }
-            if (leapYear && day == 29) {
-                result_month = month + 1;
-                result_day = 1;
-            }
-            else if (!leapYear && day == 28) {
-                result_month = month + 1;
-                result_day = 1;
-            }
-        }
-        // 根据月来判断月和年
-        else if (day == 31) {
-            result_month += 1;
-            result_day = 1;
-        }
-        result = result_year + "." + result_month + "." + result_day;
-        return result;
     }
 
 //    public static void main(String[] args) throws FileNotFoundException {
