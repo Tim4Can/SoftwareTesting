@@ -1,29 +1,33 @@
 package com.tongji.test.util;
 
+import java.io.File;
+
 public class ConstantPath {
+    public final static String PathDir = "src"+File.separator+"main"+File.separator+"java"+File.separator
+                                + "com"+File.separator+"tongji"+File.separator+"test"+File.separator+"usecase";
     // Sale System Path
-    public final static String StatementTest = "src/main/java/com/tongji/test/usecase/SaleStatement.csv";
-    public final static String DecisionTest = "src/main/java/com/tongji/test/usecase/SaleDecision.csv";
-    public final static String ConditionTest = "src/main/java/com/tongji/test/usecase/SaleCondition.csv";
-    public final static String DCTest = "src/main/java/com/tongji/test/usecase/SaleDC.csv";
-    public final static String CCTest = "src/main/java/com/tongji/test/usecase/SaleCC.csv";
+    public final static String StatementTest = PathDir+File.separator+"SaleStatement.csv";
+    public final static String DecisionTest = PathDir+File.separator+"SaleDecision.csv";
+    public final static String ConditionTest = PathDir+File.separator+"SaleCondition.csv";
+    public final static String DCTest = PathDir+File.separator+"SaleDC.csv";
+    public final static String CCTest = PathDir+File.separator+"SaleCC.csv";
 
     // Calendar Path
-    public final static String CalBoundary = "src/main/java/com/tongji/test/usecase/CalenderBoundary.csv";
-    public final static String CalEquivalence = "src/main/java/com/tongji/test/usecase/CalenderEquivalence.csv";
+    public final static String CalBoundary = PathDir+File.separator+"CalenderBoundary.csv";
+    public final static String CalEquivalence = PathDir+File.separator+"CalenderEquivalence.csv";
 
     //  Phone Bill Path
-    public final static String PBBoundary="src/main/java/com/tongji/test/usecase/PhoneBillBoundary.csv";
-    public final static String PBEC0="src/main/java/com/tongji/test/usecase/PhoneBillEC0.csv";
-    public final static String PBEC1="src/main/java/com/tongji/test/usecase/PhoneBillEC1.csv";
-    public final static String PBEC2="src/main/java/com/tongji/test/usecase/PhoneBillEC2.csv";
-    public final static String PBEC3="src/main/java/com/tongji/test/usecase/PhoneBillEC3.csv";
-    public final static String PBDT="src/main/java/com/tongji/test/usecase/PhoneBillDT.csv";
+    public final static String PBBoundary=PathDir+File.separator+"PhoneBillBoundary.csv";
+    public final static String PBEC0=PathDir+File.separator+"PhoneBillEC0.csv";
+    public final static String PBEC1=PathDir+File.separator+"PhoneBillEC1.csv";
+    public final static String PBEC2=PathDir+File.separator+"PhoneBillEC2.csv";
+    public final static String PBEC3=PathDir+File.separator+"PhoneBillEC3.csv";
+    public final static String PBDT=PathDir+File.separator+"PhoneBillDT.csv";
     
     //Triangle Path
-    public final static String TriBoundary = "src/main/java/com/tongji/test/usecase/TriangleBoundary.csv";
+    public final static String TriBoundary = PathDir+File.separator+"TriangleBoundary.csv";
     
     //Comission Path
-    public final static String ComBoundary = "src/main/java/com/tongji/test/usecase/ComissionBoundary.csv";
+    public final static String ComBoundary = PathDir+File.separator+"ComissionBoundary.csv";
 
 }
