@@ -3,7 +3,7 @@ package com.tongji.test.util;
 import java.io.File;
 
 public class ConstantPath {
-    public final static String PathDir = "/Users/budi/Desktop/软件测试/SoftwareTesting/src"+File.separator+"main"+File.separator+"java"+File.separator
+    public final static String PathDir = "c:/users/dell/desktop/softwaretesting/SoftwareTesting/src/"+File.separator+"main"+File.separator+"java"+File.separator
                                 + "com"+File.separator+"tongji"+File.separator+"test"+File.separator+"usecase";
     // Sale System Path
     public final static String StatementTest = PathDir+File.separator+"SaleStatement.csv";
@@ -23,6 +23,7 @@ public class ConstantPath {
     public final static String PBEC2=PathDir+File.separator+"PhoneBillEC2.csv";
     public final static String PBEC3=PathDir+File.separator+"PhoneBillEC3.csv";
     public final static String PBDT=PathDir+File.separator+"PhoneBillDT.csv";
+    public final static String PBCM=PathDir+File.separator+"PhoneBillCom.csv";
     
     //Triangle Path
     public final static String TriBoundary = PathDir+File.separator+"TriangleBoundary.csv";
