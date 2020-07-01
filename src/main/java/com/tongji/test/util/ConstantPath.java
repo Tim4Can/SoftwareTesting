@@ -3,7 +3,7 @@ package com.tongji.test.util;
 import java.io.File;
 
 public class ConstantPath {
-    public final static String PathDir = "c:/users/dell/desktop/softwaretesting/SoftwareTesting/src/"+File.separator+"main"+File.separator+"java"+File.separator
+    public final static String PathDir = "/Users/budi/Desktop/软件测试/SoftwareTesting/src/"+File.separator+"main"+File.separator+"java"+File.separator
                                 + "com"+File.separator+"tongji"+File.separator+"test"+File.separator+"usecase";
     // Sale System Path
     public final static String StatementTest = PathDir+File.separator+"SaleStatement.csv";

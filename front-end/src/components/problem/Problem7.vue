@@ -84,6 +84,10 @@ export default {
         {
           value: "选项6",
           label: "决策表"
+        },
+        {
+          value: "选项7",
+          label: "综合分析"
         }
       ],
       value: "",
@@ -600,6 +604,18 @@ export default {
         // this.tableData = this.jcData;
         this.$axios
           .post("http://localhost:8021/test?service=7&type=dt")
+          .then(response => {
+            console.log(response.data);
+            this.tableData = response.data;
+          })
+          .catch(() => {
+            console.log("error");
+          });
+      }
+      if (this.value == "选项7") {
+        // this.tableData = this.jcData;
+        this.$axios
+          .post("http://localhost:8021/test?service=7&type=cm")
           .then(response => {
             console.log(response.data);
             this.tableData = response.data;
