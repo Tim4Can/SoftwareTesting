@@ -46,8 +46,8 @@ public class PhoneBillService implements TestService{
                 int time = Integer.parseInt(item[2]);
                 String predict= item[3];
                 boolean pass = false;
-//                PhoneBill pb=new PhoneBill();
-                PhoneBillFix pb=new PhoneBillFix();
+                PhoneBill pb=new PhoneBill();
+//                PhoneBillFix pb=new PhoneBillFix();
                 String result=pb.init(number,time);
 
                 if(predict.strip().equals(result.strip())) {
