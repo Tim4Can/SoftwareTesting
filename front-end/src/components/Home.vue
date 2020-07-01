@@ -93,7 +93,7 @@ export default {
           authName: 'iS3',
           icon: 'el-icon-s-platform',
           children: [
-            { id: 31, authName: '报告', path: 'baogao' }
+            { id: 31, authName: '测试用例', path: 'baogao' }
           ]
         }
         // {

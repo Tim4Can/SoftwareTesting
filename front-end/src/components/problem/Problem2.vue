@@ -8,7 +8,7 @@
     </el-breadcrumb>
 
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="万年历" name="first">
+      <el-tab-pane label="佣金" name="first">
         <!-- 卡片视图区域 -->
         <el-card>
           <!-- 搜索区域 -->
